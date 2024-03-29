@@ -32,12 +32,12 @@ with open ("location_data.csv", "w") as f:
     for location in data_dict:
         location_details = location["acf"]["locationHero"]
         row = {
+            "storeID": location["id"],
             "locationName": location_details["storeName"],
             "streetAddress": location_details["addressLine1"],
             "city": location_details["city"],
             "state": location_details["state"],
             "postalCode": location_details["zip"],
             "phoneNumber": location_details["phone"],
-            "storeID": location_details["id"]
         }
         writer.writerow(row)
